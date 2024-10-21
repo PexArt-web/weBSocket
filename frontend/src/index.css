@@ -12,9 +12,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+.container {
+  text-align: center;
+  margin-top: 6rem;
+}
+.input-field{
+  height: 2rem;
+  padding-left: 0.5rem;
+  outline: 1px solid grey;
+  width: 20rem;
+  margin: 0.5rem;
+  border-radius:0.5rem;
+}
+.input-field::placeholder{
+  color: #888;
+  opacity: 1;
+}

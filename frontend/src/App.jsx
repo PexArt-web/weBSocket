@@ -1,7 +1,7 @@
+import DashBoard from "./DashBoard";
+
 function App() {
-  return <>
-  <h1>pExChat 💬</h1>
-  </>;
+  return <DashBoard />;
 }
 
 export default App;
