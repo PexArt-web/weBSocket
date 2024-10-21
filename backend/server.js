@@ -6,15 +6,19 @@ const { Server } = require("socket.io");
 
 const httpServer = createServer();
 
-const socket = new Server(httpServer, {
+const io = new Server(httpServer, {
   cors: {
     origin: "http://localhost:5173",
   },
 });
 
-socket.on("connection", (socket) => {
-  socket.on("message", (data) => {
-    log(data);
+let playerScore = [];
+io.on("connection", (socket) => {
+  socket.on("score", (score) => {
+    playerScore.push(score);
+    setTimeout(() => {
+      socket.emit("playerScore", playerScore);
+    }, 5000);
   });
 });
 
